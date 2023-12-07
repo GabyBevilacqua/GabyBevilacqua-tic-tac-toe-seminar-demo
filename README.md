@@ -1,4 +1,4 @@
-#Tic Tac Toe Demo
+# Tic Tac Toe Demo
 
 Built for a seminar for @4GeeksAcademy.
 
