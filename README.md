@@ -1,4 +1,6 @@
-# React + Vite
+#Tic Tac Toe Demo
+
+Built for a seminar for @4GeeksAcademy.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
