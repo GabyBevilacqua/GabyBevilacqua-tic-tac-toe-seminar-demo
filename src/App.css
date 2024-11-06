@@ -1,24 +1,35 @@
+.container {
+    background-color: rgb(78, 88, 99);
+    padding: 2%;
+    border-radius: 10%;
+    background-image: url('https://images.unsplash.com/photo-1462332420958-a05d1e002413?q=80&w=1807&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    
+}
+
 .game-board{
-    width: 75%;
+    width: 60%;
     aspect-ratio: 1;
     
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
 .game-board .game-piece {
-    border: solid 0.1rem hsl(0 0% 75%);
+    border: solid 0.2rem hsl(0 0% 75%);
     background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .game-board .x{
-    background-color: rgb(139, 166, 255);
+    background-color: rgb(243, 128, 74);
 }
 
 .game-board .o{
-    background-color: rgb(193, 139, 255);
+    background-color: rgb(113, 161, 49);
 }
 

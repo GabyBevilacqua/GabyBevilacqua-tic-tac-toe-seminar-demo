@@ -39,16 +39,17 @@ function App() {
   ]);
 
   const handleClick =(idx) => {
-    if (gameState[idx] !==null){
-      return;
-    }
-
     if (isDone.current) {
       setGameState([
         null, null, null,
         null, null, null,
         null, null, null,
       ]);
+      isDone.current = false;
+      return;
+    }
+    if (gameState[idx] !==null){
+      return;
     }
 
     setGameState(gameState.toSpliced(idx, 1, currentPlayer));
@@ -62,23 +63,27 @@ function App() {
       if (line.every(idx => gameState[idx] === "x")) {
         isDone.current = true;
         setXWins(xWins + 1);
+        return;
       } else if (line.every(idx => gameState[idx] === "o")) {
         isDone.current = true;
         setOWins(oWins + 1);
       }
     }
-
+    if (gameState.every(cell => cell !== null)) {
+      isDone.current = true;
+      setTies(ties + 1);
+    }
   }, [gameState]);
 
   return (
     <>
-      <div className="container d-flex flex-column align-items-center">
+      <div className="container d-flex flex-column align-items-center mt-3">
         <h1>
-          X wins: <code>{xWins}</code> | 
-          0 wins: <code>{oWins}</code> | 
+        <i className="fas fa-times"></i> wins: <code>{xWins}</code> .|. 
+        <i className="far fa-circle"></i> wins: <code>{oWins}</code> .|. 
           Ties:   <code>{ties}</code>
         </h1>
-        <div className="game-board">
+        <div className="game-board mt-3">
           {gameState.map((player, idx) => <GamePiece 
           key={idx}
           player={player} 
