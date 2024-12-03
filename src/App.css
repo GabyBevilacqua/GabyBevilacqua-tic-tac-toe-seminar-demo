@@ -11,7 +11,7 @@
 }
 
 .game-board{
-    width: 60%;
+    width: 50%;
     aspect-ratio: 1;
     
     display: grid;
